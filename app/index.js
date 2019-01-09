@@ -1,21 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StyleSheet, Text, View } from 'react-native';
+import EStyleSheet from 'react-native-extended-stylesheet';
+import Home from './screens/Home';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up app/index to start working on your app!</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+EStyleSheet.build({
+  $primaryColor: '#562a4e',
+  $StatusBarColor: '#562a4e',
+  $headerColor: '#5D3055',
+  $CreateBtnColor: '#613458',
 });
+
+export default () => <Home />;

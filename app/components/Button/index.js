@@ -1,3 +1,4 @@
 import CreateButton from './CreateButton';
 import Styles from './styles';
-export {CreateButton, Styles};
+
+export { CreateButton, Styles };
