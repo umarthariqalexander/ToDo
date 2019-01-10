@@ -1,7 +1,10 @@
 import React from 'react';
-import { View, Text, StatusBar } from 'react-native';
+import {
+  View, Text, StatusBar, FlatList,
+} from 'react-native';
 import { Container } from '../components/Container';
 import { Header } from '../components/Header';
+import { ListItem } from '../components/ListItem';
 // import Icon1 from 'react-native-vector-icons/FontAwesome';
 // import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -28,9 +31,13 @@ class Home extends React.Component {
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
         <Header onMenuIconPress={this.onMenuIconPress} onOptionIconPress={this.onOptionIconPress} />
-        <View>
-          <Text>Hello Umar!!</Text>
-        </View>
+        <View style={{ paddingTop: 100 }} />
+        <FlatList
+          style={{ alignSelf: 'stretch' }}
+          data={[{ reminderTitle: 'Meeting1' }, { reminderTitle: 'Meeting2' }]}
+          renderItem={({ item }) => <ListItem reminderTitle={item.reminderTitle} />}
+          keyExtractor={({ reminderTitle }) => reminderTitle}
+        />
       </Container>
     );
   }

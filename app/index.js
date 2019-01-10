@@ -9,6 +9,9 @@ EStyleSheet.build({
   $headerColor: '#5D3055',
   $CreateBtnColor: '#613458',
   $white: '#FFFFFF',
+  $borderColor: '#9B9B9B',
+  $Gray80: '#CCCCCC',
+  // $outline: 1,
 });
 
 export default () => <Home />;
