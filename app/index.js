@@ -8,6 +8,7 @@ EStyleSheet.build({
   $StatusBarColor: '#562a4e',
   $headerColor: '#5D3055',
   $CreateBtnColor: '#613458',
+  $white: '#FFFFFF',
 });
 
 export default () => <Home />;
