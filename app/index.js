@@ -10,7 +10,7 @@ EStyleSheet.build({
   $CreateBtnColor: '#613458',
   $white: '#FFFFFF',
   $borderColor: '#9B9B9B',
-  $Gray80: '#CCCCCC',
+  $Grey80: '#CCCCCC',
   // $outline: 1,
 });
 
