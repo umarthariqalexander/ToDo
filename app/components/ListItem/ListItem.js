@@ -39,7 +39,7 @@ const ListItem = ({
       </View>
       <View style={styles.itemContainer}>
         <View>
-          <Icon name="alarm-check" size={20} color="#9B9B9B" />
+          <Icon name="cached" size={20} color="#9B9B9B" />
         </View>
         <View style={styles.reminderTimeWrapper}>
           <Text style={styles.reminderTime}>{snoozeType}</Text>
