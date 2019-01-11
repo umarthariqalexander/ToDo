@@ -28,7 +28,7 @@ export default EStyleSheet.create({
   },
   headerText: {
     color: '$white',
-    fontSize: 26,
+    fontSize: 25,
   },
   optionsIcon: {
     position: 'absolute',

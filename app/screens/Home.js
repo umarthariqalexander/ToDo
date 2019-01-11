@@ -3,7 +3,7 @@ import {
   View, Text, StatusBar, FlatList,
 } from 'react-native';
 import { Container } from '../components/Container';
-import { Header } from '../components/Header';
+import { HomeHeader } from '../components/Header';
 import { ListItem } from '../components/ListItem';
 import { CreateButton } from '../components/Button';
 // import Icon1 from 'react-native-vector-icons/FontAwesome';
@@ -50,7 +50,7 @@ class Home extends React.Component {
     return (
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
-        <Header onMenuIconPress={this.onMenuIconPress} onOptionIconPress={this.onOptionIconPress} />
+        <HomeHeader onMenuIconPress={this.onMenuIconPress} onOptionIconPress={this.onOptionIconPress} />
         <View style={{ paddingTop: 100 }} />
         <FlatList
           style={{ alignSelf: 'stretch' }}
