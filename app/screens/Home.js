@@ -5,6 +5,7 @@ import {
 import { Container } from '../components/Container';
 import { Header } from '../components/Header';
 import { ListItem } from '../components/ListItem';
+import { CreateButton } from '../components/Button';
 // import Icon1 from 'react-native-vector-icons/FontAwesome';
 // import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -57,6 +58,7 @@ class Home extends React.Component {
           renderItem={({ item }) => <ListItem reminderTitle={item.reminderTitle} reminderTime={item.reminderTime} reminderDate={item.reminderDate} snoozeType={item.snoozeType} />}
           keyExtractor={({ reminderTitle }) => reminderTitle}
         />
+        <CreateButton />
       </Container>
     );
   }
