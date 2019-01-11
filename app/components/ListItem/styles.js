@@ -35,7 +35,7 @@ export default EStyleSheet.create({
     paddingVertical: 10,
   },
   reminderTitle: {
-    fontSize: 24,
+    fontSize: 22,
     fontWeight: '300',
   },
   reminderTitleIcon: {

@@ -16,14 +16,14 @@ const ListItem = ({
         <Text style={styles.reminderTitle}>{reminderTitle}</Text>
       </View>
       <View style={styles.reminderTitleIcon}>
-        <Icon name="alarm-check" size={30} color="#562a4e" />
+        <Icon name="alarm-check" size={25} color="#562a4e" />
       </View>
     </View>
     <Separator />
     <View style={styles.dateAndTimeContainer}>
       <View style={styles.itemContainer}>
         <View>
-          <Icon name="alarm-check" size={20} color="#9B9B9B" />
+          <Icon name="alarm" size={20} color="#9B9B9B" />
         </View>
         <View style={styles.reminderTimeWrapper}>
           <Text style={styles.reminderTime}>{reminderTime}</Text>
