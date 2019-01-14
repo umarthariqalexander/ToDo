@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View, Text, StatusBar, FlatList,
 } from 'react-native';
+import PropTypes from 'prop-types';
 import { Container } from '../components/Container';
 import { HomeHeader } from '../components/Header';
 import { ListItem } from '../components/ListItem';
@@ -19,6 +20,10 @@ import { CreateButton } from '../components/Button';
 // const plusIconMC = (<Icon2 name="plus" size={30} color="#FFF" />);
 
 class Home extends React.Component {
+  static propTypes = {
+    navigation: PropTypes.object,
+  };
+
   constructor() {
     super();
     this.state = {
@@ -46,6 +51,11 @@ class Home extends React.Component {
     console.log('options icon pressed');
   }
 
+  onCreateButtonPress = () => {
+    // console.log('Create Button pressed');
+    this.props.navigation.navigate('Create');
+  }
+
   render() {
     return (
       <Container>
@@ -58,10 +68,11 @@ class Home extends React.Component {
           renderItem={({ item }) => <ListItem reminderTitle={item.reminderTitle} reminderTime={item.reminderTime} reminderDate={item.reminderDate} snoozeType={item.snoozeType} />}
           keyExtractor={({ reminderTitle }) => reminderTitle}
         />
-        <CreateButton />
+        <CreateButton onPress={this.onCreateButtonPress} />
       </Container>
     );
   }
 }
+
 
 export default Home;

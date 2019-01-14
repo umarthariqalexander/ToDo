@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 import { CreateHeader } from '../components/Header';
 import { InputText } from '../components/InputText';
 
 class Create extends Component {
+    static propTypes = {
+      navigation: PropTypes.object,
+    };
+
     onCloseIconPress = () => {
-      console.log('onCloseIconPress');
+      this.props.navigation.goBack();
     }
 
     onCreateIconPress = () => {
-      console.log('onCreateIconPress');
+      this.props.navigation.goBack();
     }
 
     onTextChange = (text) => {

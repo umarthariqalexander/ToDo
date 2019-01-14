@@ -4,6 +4,8 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 import Home from './screens/Home';
 import Create from './screens/Create';
 
+import Navigator from './config/routes';
+
 EStyleSheet.build({
   $primaryColor: '#562a4e',
   $StatusBarColor: '#562a4e',
@@ -15,4 +17,4 @@ EStyleSheet.build({
   // $outline: 1,
 });
 
-export default () => <Create />;
+export default () => <Navigator />;
