@@ -6,17 +6,19 @@ import styles from './styles';
 import HeaderContainer from './HeaderContainer';
 
 const ICON_SIZE = 30;
+const menuIcon = <Icon name="menu" size={ICON_SIZE} color="#FFF" />;
+const optionsIcon = <Icon name="more-vert" size={ICON_SIZE - 3} color="#FFF" />;
 
 const HomeHeader = ({ onMenuIconPress, onOptionIconPress }) => (
   <HeaderContainer>
     <TouchableOpacity onPress={onMenuIconPress} style={styles.menuIcon}>
-      <Icon name="menu" size={ICON_SIZE} color="#FFF" />
+      {menuIcon}
     </TouchableOpacity>
     <View style={styles.headerTextContainer}>
       <Text style={styles.headerText}>Reminder List</Text>
     </View>
     <TouchableOpacity onPress={onOptionIconPress} style={styles.optionsIcon}>
-      <Icon name="more-vert" size={ICON_SIZE - 3} color="#FFF" />
+      {optionsIcon}
     </TouchableOpacity>
   </HeaderContainer>
 );

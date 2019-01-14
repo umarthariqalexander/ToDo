@@ -3,10 +3,12 @@ import {
   View, Text, StatusBar, FlatList,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { Container } from '../components/Container';
 import { HomeHeader } from '../components/Header';
 import { ListItem } from '../components/ListItem';
 import { CreateButton } from '../components/Button';
+import { getRemindersList } from '../actions/HomeActions';
 // import Icon1 from 'react-native-vector-icons/FontAwesome';
 // import Icon2 from 'react-native-vector-icons/MaterialCommunityIcons';
 
@@ -22,26 +24,25 @@ import { CreateButton } from '../components/Button';
 class Home extends React.Component {
   static propTypes = {
     navigation: PropTypes.object,
+    dispatch: PropTypes.func,
+    remindersList: PropTypes.array,
   };
 
   constructor() {
     super();
-    this.state = {
-      reminderList: [{
-        reminderTitle: 'Meeting 1', reminderTime: '05:00PM', reminderDate: '11/12/2011', snoozeType: 'Never',
-      }, {
-        reminderTitle: 'Meeting 2', reminderTime: '07:00PM', reminderDate: '11/11/2011', snoozeType: 'EveryDay',
-      }, {
-        reminderTitle: 'Meeting 3', reminderTime: '07:00PM', reminderDate: '11/11/2011', snoozeType: 'EveryDay',
-      }, {
-        reminderTitle: 'Meeting 4', reminderTime: '07:00PM', reminderDate: '11/11/2011', snoozeType: 'EveryDay',
-      }, {
-        reminderTitle: 'Meeting 5', reminderTime: '07:00PM', reminderDate: '11/11/2011', snoozeType: 'EveryDay',
-      }, {
-        reminderTitle: 'Meeting 6', reminderTime: '07:00PM', reminderDate: '11/11/2011', snoozeType: 'EveryDay',
-      }],
-    };
+    this.state = {};
   }
+
+  componentDidMount() {
+    this.props.dispatch(getRemindersList());
+  }
+
+  // static getDerivedStateFromProps(nextProps, prevState) {
+  //   if (nextProps.remindersList !== prevState.remindersList) {
+  //     return { remindersList: nextProps.remindersList };
+  //   }
+  //   return null;
+  // }
 
   onMenuIconPress = () => {
     console.log('menu icon pressed');
@@ -57,6 +58,7 @@ class Home extends React.Component {
   }
 
   render() {
+    const { remindersList } = this.props;
     return (
       <Container>
         <StatusBar translucent={false} barStyle="light-content" />
@@ -64,7 +66,7 @@ class Home extends React.Component {
         <View style={{ paddingTop: 100 }} />
         <FlatList
           style={{ alignSelf: 'stretch' }}
-          data={this.state.reminderList}
+          data={remindersList}
           renderItem={({ item }) => <ListItem reminderTitle={item.reminderTitle} reminderTime={item.reminderTime} reminderDate={item.reminderDate} snoozeType={item.snoozeType} />}
           keyExtractor={({ reminderTitle }) => reminderTitle}
         />
@@ -74,5 +76,9 @@ class Home extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  remindersList: state.home.remindersList,
+});
 
-export default Home;
+
+export default connect(mapStateToProps)(Home);
