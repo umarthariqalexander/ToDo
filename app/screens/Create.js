@@ -23,7 +23,7 @@ class Create extends Component {
 
     render() {
       return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: '#FFFFFF' }}>
           <CreateHeader onCreateIconPress={this.onCreateIconPress} onCloseIconPress={this.onCloseIconPress} />
           <View style={{ paddingTop: 100 }} />
           <InputText autoFocus showTextCounter onChangeText={this.onTextChange} inputTextTitle="Reminder Name" maxLength={30} placeholder="Reminder Title" inputTextContainerStyles={{ marginBottom: 10 }} />
